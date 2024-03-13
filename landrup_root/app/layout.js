@@ -1,7 +1,22 @@
-import { Inter } from "next/font/google";
+import { Ubuntu, Roboto, Racing_Sans_One } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const ubuntu = Ubuntu({
+  weight: '400',
+  subsets: ["latin"]
+});
+
+const roboto = Roboto({
+  weight: '400',
+  subsets: ["latin"]
+});
+
+const racingSansOne = Racing_Sans_One({
+  weight: '400',
+  subsets: ["latin"]
+});
+
+export { ubuntu, roboto, racingSansOne };
 
 export const metadata = {
   title: "Landrup Dans",
@@ -11,7 +26,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="da">
-      <body className={inter.className}>{children}</body>
+      <body className={ubuntu.className}>
+        {children}
+      </body>
     </html>
   );
 }

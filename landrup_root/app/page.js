@@ -2,6 +2,7 @@
 import BasicButton from '@/components/BasicButton';
 import bg from '@/public/baggrund.png'
 import Image from 'next/image';
+import { roboto, racingSansOne } from '@/app/layout';
 import Link from 'next/link';
 
 export default function Home() {
@@ -18,11 +19,18 @@ export default function Home() {
         placeholder='blur' />
       </div>
       <div className='col-span-1 row-span-1 fixed'>
-        <h1 className='text-gray-700'>Landrup
-          <span>Dans</span>
+        <h1 className={`
+          text-gray-700 ${roboto.className}
+        `}>
+          Landrup
+          <span className={racingSansOne.className}
+          >Dans</span>
         </h1>
       </div>
-      <Link href="/aktiviteter">
+      {/* Jeg ville have lavet et enkelt element med `as` prop i stedet for at neste under Link, men Next komponenter kan ikke sendes som prop : */}
+      <Link href="/aktiviteter" className='
+        fixed bottom-12 left-1/2 -translate-x-1/2
+      '>
         <BasicButton>Kom i gang</BasicButton>
       </Link>
     </main>
