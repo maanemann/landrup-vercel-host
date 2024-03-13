@@ -1,5 +1,9 @@
+
 const Aktivitetsdetaljer = () => {
-  return ( <></> );
+  return (
+    <main>
+    </main>
+  );
 }
  
 export default Aktivitetsdetaljer;

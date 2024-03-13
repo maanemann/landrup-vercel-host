@@ -1,5 +1,9 @@
+
 const Velkommen = () => {
-  return ( <></> );
+  return (
+    <main>
+    </main>
+  );
 }
  
 export default Velkommen;

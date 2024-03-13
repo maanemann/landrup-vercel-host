@@ -1,5 +1,9 @@
+
 const Aktiviteter = () => {
-  return ( <></> );
+  return (
+    <main>
+    </main>
+  );
 }
  
 export default Aktiviteter;

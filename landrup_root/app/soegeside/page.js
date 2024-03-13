@@ -1,5 +1,9 @@
+
 const Soegeside = () => {
-  return ( <></> );
+  return (
+    <main>
+    </main>
+  );
 }
  
 export default Soegeside;
