@@ -1,9 +1,11 @@
+import Drawer from "@/components/Drawer";
 
 const Aktiviteter = () => {
-  return (
+  return ( <>
     <main>
     </main>
-  );
+    <Drawer />
+  </> );
 }
  
 export default Aktiviteter;

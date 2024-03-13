@@ -24,4 +24,7 @@
     -webkit-text-stroke-width: 1.5px;
     -webkit-text-stroke-color: theme('colors.themeBg');
   }
+  .clipCircleCss {
+    clip-path: circle(50% at 50% 50%);
+  }
 }

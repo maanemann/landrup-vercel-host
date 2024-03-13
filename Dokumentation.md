@@ -4,6 +4,7 @@
 - React (JavaScript framework)
 - Next.js (React framework)
 - Tailwind (CSS framework)
+- React Icons
 
 
 ## Teknisk Dokumentation:
@@ -38,6 +39,11 @@ Der er desuden praktiske værktøjer inkluderet, som f.eks. en ultrakondenceret 
 Tailwind kommer også med en bred vifte reset styles, som sikrer ensartede resultater mellem browsere og systemer og sørger for mere neutrale standarder. Samtidig er PostCSS integreret, som betyder at kun de styles, der faktisk bruges inkluderes i build.
 
 Det nærmeste alternativ til Tailwind – foruden vanilla CSS – er måske Bootstrap, som også kommer med predefinerede styles og et responsivt grid system. Men Bootstrap er et bibliotek af færdigbyggede komponenter (det modsatte af utility-first), som skal overskrives, hvis man vil tilpasse designet. Hvor tailwind er et low-level framework, der giver værktøjer til at skabe sit eget design (eller implementere et udleveret design) fra bunden.
+
+
+### React Icons
+
+...
 
 
 ## Kode til særlig bedømmelse
