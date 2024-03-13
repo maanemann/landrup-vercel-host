@@ -41,17 +41,21 @@ Det nærmeste alternativ til Tailwind – foruden vanilla CSS – er måske Boot
 
 
 ## Kode til særlig bedømmelse
+
 - Indsæt kode til særlig bedømmelse.
 
 
 ## Evt. tilføjelser og rettelser
+
 - Beskriv hvad du eventuelt har tilføjet og eller rettet og begrund dit valg.
 
 
 ## Valgfri opgave
+
 - Forklar hvilken en af de valgfrie opgaver du har valgt og uddyb herunder.
 
 
 ## Reflektion
+
 - Reflekter over og beskriv hvordan applikationen i sin nuværende form kan skaleres i fremtiden.
 
