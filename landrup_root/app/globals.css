@@ -2,13 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  color: theme('colors.themeBright');
-  background: theme('colors.themeBg');
+/* @apply */
+
+@layer base {
+  body {
+    color: theme('colors.themeBright');
+    background: theme('colors.themeBg');
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .landrupCss {
+    color: theme('colors.fuchsia.500');
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: theme('colors.themeBg');
+  }
+  .dansCss {
+    color: theme('colors.fuchsia.500');
+    -webkit-text-fill-color: theme('colors.fuchsia.500');
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: theme('colors.themeBg');
   }
 }
