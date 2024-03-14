@@ -5,13 +5,10 @@ import Link from "next/link";
 
 const Icon = ({ link, children, title }) => {
   return (
-    <li className="
-      w-10 aspect-square grid
-      clipCircleCss bg-black
-    ">
+    <li>
     <Link href={ link } title={ title } className="
-      w-[2.39rem] aspect-square grid m-auto
-      clipCircleCss bg-themeBright
+      w-10 aspect-square grid m-auto
+      rounded-full bg-themeBright border border-themeDark
     ">
       { children }
     </Link></li>
