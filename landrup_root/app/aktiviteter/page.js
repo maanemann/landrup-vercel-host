@@ -21,7 +21,7 @@ const Aktiviteter = () => {
         { aktiviteterData && aktiviteterData.map((aktivitet) => (
           <Aktivitet
             key={aktivitet.id} assetUrl={aktivitet.asset.url}
-            name={aktivitet.name}
+            name={aktivitet.name} id={aktivitet.id}
             minAge={aktivitet.minAge} maxAge={aktivitet.maxAge}
           />
         )) }

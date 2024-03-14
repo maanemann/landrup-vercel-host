@@ -1,7 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 
-const Aktivitet = ({ assetUrl, name, minAge, maxAge }) => {
+const Aktivitet = ({ assetUrl, name, minAge, maxAge, id }) => {
   return ( 
+    <Link href={`/aktiviteter/${ id }`}>
+    {/* as={`/aktiviteter/${name}`}> */}
       <figure className="relative">
         <div className="w-full h-[344px] relative">
           <Image src={ assetUrl }
@@ -20,6 +23,7 @@ const Aktivitet = ({ assetUrl, name, minAge, maxAge }) => {
           <p>{ minAge}-{ maxAge } år</p>
         </figcaption>
       </figure>
+    </Link>
    );
 }
  
