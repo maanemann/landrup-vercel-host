@@ -1,5 +1,6 @@
 import { Ubuntu, Roboto, Racing_Sans_One } from "next/font/google";
 import "./globals.css";
+import { ApiWrapper } from "@/context";
 
 const ubuntu = Ubuntu({
   weight: '400',
@@ -26,9 +27,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="da">
-      <body className={ubuntu.className}>
-        {children}
-      </body>
+      <ApiWrapper>
+        <body className={ubuntu.className}>
+          {children}
+        </body>
+      </ApiWrapper>
     </html>
   );
 }
