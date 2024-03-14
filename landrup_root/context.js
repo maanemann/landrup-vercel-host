@@ -43,7 +43,3 @@ export function useApiContext() {
   return useContext(apiContext);
 }
 
-
-// Read more.. :
-// *1* : ´map´ tager en callback funktion som argument, og denne funktion kan tage tre argumenter: det aktuelle element, index og det oprindelige array. Her er brugt de første to argumenter. Index er en nul-baseret værdi, som repræsenterer det aktuelle element i array'et, hvilket react bruger til at opdatere DOM korrekt.
-
