@@ -24,7 +24,7 @@ export function ApiWrapper({ children }) {
         setAktiviteterData(data);
         
       } catch (error) {
-        console.error('Error fetching aktiviteter:', error.message);
+        // console.error('Error fetching aktiviteter:', error.message);
         setError(error.message);
       }
     };

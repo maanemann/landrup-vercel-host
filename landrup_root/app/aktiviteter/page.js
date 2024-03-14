@@ -9,8 +9,6 @@ import { useApiContext } from "@/context";
 const Aktiviteter = () => {
   const { aktiviteterData, error } = useApiContext();
 
-  console.log(aktiviteterData);
-
   return ( <>
     <main className="p-8">
       <H1A>Aktiviteter</H1A>
