@@ -24,7 +24,7 @@ const Drawer = () => {
     ">
       <ul className="
         flex w-screen justify-between
-        px-6 py-3
+        px-8 py-3
       ">
         <Icon link="/aktiviteter" title="Hjem">
           <BiHomeAlt className="

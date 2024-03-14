@@ -16,7 +16,7 @@ export default function Home() {
       '>
         <Image src={bg} alt="baggrund"
         fill style={{ objectFit: 'cover' }}
-        placeholder='blur' />
+        placeholder='blur' priority />
       </div>
       <div className='
         col-span-1 row-span-1 fixed

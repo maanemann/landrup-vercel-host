@@ -8,11 +8,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        themeDark: "#000000",
-        themeBright: "#EAEAEA",
-        themeBg: "#5E2E53",
-        themeBgBright: "#E1A1E9",
-      }
+        "themeDark": "#000000",
+        "themeBright": "#EAEAEA",
+        "themeBg": "#5E2E53",
+        "themeBgBright": "#E1A1E9",
+      },
+      borderRadius: {
+        "4xl": "2.5rem",
+      },
     },
   },
   plugins: [],

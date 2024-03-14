@@ -8,6 +8,7 @@
   body {
     color: theme('colors.themeBright');
     background: theme('colors.themeBg');
+    font-size: 1.125rem;
   }
 }
 
@@ -23,8 +24,5 @@
     -webkit-text-fill-color: theme('colors.fuchsia.500');
     -webkit-text-stroke-width: 1.5px;
     -webkit-text-stroke-color: theme('colors.themeBg');
-  }
-  .clipCircleCss {
-    clip-path: circle(50% at 50% 50%);
   }
 }
