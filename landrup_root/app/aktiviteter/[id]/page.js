@@ -45,23 +45,27 @@ const Aktivitetsdetaljer = ({ params }) => {
         )}
 
       </div>
-      <H1B>
-        { denneAktivitet.name }
-      </H1B>
-      <p className="inline-block">
-        { denneAktivitet.weekday }
-        &nbsp;
-      </p>
-      <p className="inline-block">
-        { denneAktivitet.time }
-        &nbsp; · &nbsp;
-      </p>
-      <p className="inline-block mb-2">
-        { denneAktivitet.minAge }-{ denneAktivitet.maxAge } år
-      </p>
-      <p>
-        { denneAktivitet.description }
-      </p>
+      <div className="px-8 pt-6 pb-16">
+        <H1B>
+          { denneAktivitet.name }
+        </H1B>
+        <div className="mb-2">
+          <p className="inline-block">
+            { denneAktivitet.minAge }-{ denneAktivitet.maxAge } år
+            &nbsp; · &nbsp;
+          </p>
+          <p className="inline-block">
+            { denneAktivitet.weekday }
+            &nbsp;
+          </p>
+          <p className="inline-block">
+            { denneAktivitet.time }
+          </p>
+        </div>
+        <p>
+          { denneAktivitet.description }
+        </p>
+      </div>
     </>
   ) : ( <>
     { error
