@@ -3,12 +3,13 @@
 
 import BasicButton from "@/components/BasicButton";
 import Drawer from "@/components/Drawer";
-import { useApiContext } from "@/context";
+import { useLoginContext, useApiContext } from "@/context";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Aktivitetsdetaljer = ({ params }) => {
+  const { loggedIn } = useLoginContext();
   const { aktiviteterData, error } = useApiContext();
   const [denneAktivitet, setDenneAktivitet] = useState(null);
 
@@ -32,11 +33,15 @@ const Aktivitetsdetaljer = ({ params }) => {
               bg-fuchsia-950
           "/>
         </div>
-        <button className='
-          absolute bottom-8 right-8
-        '>
-          <BasicButton>( dynamisk tekst )</BasicButton>
-        </button>
+
+        { loggedIn && (
+          <button className='
+            absolute bottom-8 right-8
+          '>
+            <BasicButton>( dynamisk tekst )</BasicButton>
+          </button>
+        )}
+
       </div>
       <h1>{ denneAktivitet.name }</h1>
       <p>{ denneAktivitet.weekday }</p>

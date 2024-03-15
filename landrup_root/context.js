@@ -3,6 +3,9 @@
 
 import { createContext, useContext, useState, useEffect } from "react";
 
+
+// // #region apiContext
+
 const apiContext = createContext();
 
 export function ApiWrapper({ children }) {
@@ -45,3 +48,31 @@ export function useApiContext() {
   return useContext(apiContext);
 }
 
+// // #endregion apiContext
+
+
+
+
+// // #region loginContext
+
+const loginContext = createContext();
+
+export function LoginWrapper({ children }) {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  // useEffect(() => {
+  //   // ..................
+  // }, []);
+
+  return(
+    <loginContext.Provider value={{ loggedIn, setLoggedIn }}>
+      { children }
+    </loginContext.Provider>
+  )
+};
+
+export function useLoginContext() {
+  return useContext(loginContext);
+}
+
+// // #endregion loginContext
