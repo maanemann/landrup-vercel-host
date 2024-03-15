@@ -1,8 +1,11 @@
 
 'use client'
 
+import BasicButton from "@/components/BasicButton";
+import Drawer from "@/components/Drawer";
 import { useApiContext } from "@/context";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Aktivitetsdetaljer = ({ params }) => {
@@ -20,15 +23,27 @@ const Aktivitetsdetaljer = ({ params }) => {
 
   return denneAktivitet ? (
     <>
-      <div className="relative w-full h-[489px]">
-        <Image
-          src={denneAktivitet.asset.url} alt={ denneAktivitet.name }
-          fill priority className="
-            object-cover
-            bg-fuchsia-950
-        "/>
+      <div className="relative">
+        <div className="relative w-full h-[489px]">
+          <Image
+            src={denneAktivitet.asset.url} alt={ denneAktivitet.name }
+            fill priority className="
+              object-cover
+              bg-fuchsia-950
+          "/>
+        </div>
+        <button className='
+          absolute bottom-8 right-8
+        '>
+          <BasicButton>( dynamisk tekst )</BasicButton>
+        </button>
       </div>
-      <h1>{ params.id }</h1>
+      <h1>{ denneAktivitet.name }</h1>
+      <p>{ denneAktivitet.weekday }</p>
+      <p>{ denneAktivitet.time }</p>
+      <p>{ denneAktivitet.minAge }-{ denneAktivitet.maxAge } år</p>
+      <p>{ denneAktivitet.description }</p>
+      <Drawer />
     </>
   ) : ( <>
     { error
