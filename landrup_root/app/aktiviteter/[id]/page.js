@@ -3,6 +3,7 @@
 
 import BasicButton from "@/components/BasicButton";
 import Drawer from "@/components/Drawer";
+import { H1B } from "@/components/Headings";
 import { useLoginContext, useApiContext } from "@/context";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,10 +21,11 @@ const Aktivitetsdetaljer = ({ params }) => {
       setDenneAktivitet(aktivitet);
     }
   // Der lyttes efter data fra `aktiviteterData` i dependency array'et :
-  } , [aktiviteterData]);
+  }, [aktiviteterData]);
 
-  return denneAktivitet ? (
-    <>
+  return denneAktivitet ? ( <>
+      <Drawer />
+      
       <div className="relative">
         <div className="relative w-full h-[489px]">
           <Image
@@ -43,12 +45,23 @@ const Aktivitetsdetaljer = ({ params }) => {
         )}
 
       </div>
-      <h1>{ denneAktivitet.name }</h1>
-      <p>{ denneAktivitet.weekday }</p>
-      <p>{ denneAktivitet.time }</p>
-      <p>{ denneAktivitet.minAge }-{ denneAktivitet.maxAge } år</p>
-      <p>{ denneAktivitet.description }</p>
-      <Drawer />
+      <H1B>
+        { denneAktivitet.name }
+      </H1B>
+      <p className="inline-block">
+        { denneAktivitet.weekday }
+        &nbsp;
+      </p>
+      <p className="inline-block">
+        { denneAktivitet.time }
+        &nbsp; · &nbsp;
+      </p>
+      <p className="inline-block mb-2">
+        { denneAktivitet.minAge }-{ denneAktivitet.maxAge } år
+      </p>
+      <p>
+        { denneAktivitet.description }
+      </p>
     </>
   ) : ( <>
     { error

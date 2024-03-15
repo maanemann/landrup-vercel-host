@@ -53,7 +53,7 @@ Det nærmeste alternativ til Tailwind – foruden vanilla CSS – er måske Boot
 
 ## Evt. tilføjelser og rettelser
 
-- Beskriv hvad du eventuelt har tilføjet og eller rettet og begrund dit valg.
+- Ugedag og tidspunkt for aktivitet er ikke i designet, men det står i opgavebeskrivelse, så jeg har tilføjet det inline med aldersgruppe, med en prik ("·") imellem. Havde der været en designer, ville jeg selvfølgelig konsultere vedkommende.
 
 
 ## Valgfri opgave

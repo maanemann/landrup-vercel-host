@@ -6,5 +6,13 @@ const H1A = ({ children }) => {
     </h1>
    );
 }
- 
-export {H1A};
+
+const H1B = ({ children }) => {
+  return ( 
+    <h1 className="text-2xl leading-none">
+      { children }
+    </h1>
+   );
+}
+
+export {H1A, H1B};
