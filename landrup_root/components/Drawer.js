@@ -20,7 +20,7 @@ export {Icon};
 const Drawer = () => {
   return ( 
     <nav className="
-      fixed bottom-0 bg-themeBright
+      z-10 fixed bottom-0 bg-themeBright
     ">
       <ul className="
         flex w-screen justify-between

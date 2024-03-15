@@ -24,48 +24,51 @@ const Aktivitetsdetaljer = ({ params }) => {
   }, [aktiviteterData]);
 
   return denneAktivitet ? ( <>
+
       <Drawer />
-      
-      <div className="relative">
-        <div className="relative w-full h-[489px]">
-          <Image
-            src={denneAktivitet.asset.url} alt={ denneAktivitet.name }
-            fill priority className="
-              object-cover
-              bg-fuchsia-950
-          "/>
-        </div>
 
-        { loggedIn && (
-          <button className='
-            absolute bottom-8 right-8
-          '>
-            <BasicButton>( dynamisk tekst )</BasicButton>
-          </button>
-        )}
+      <main>
+        <div className="relative">
+          <div className="relative w-full h-[489px]">
+            <Image
+              src={denneAktivitet.asset.url} alt={ denneAktivitet.name }
+              fill priority className="
+                object-cover
+                bg-fuchsia-950
+            "/>
+          </div>
 
-      </div>
-      <div className="px-8 pt-6 pb-16">
-        <H1B>
-          { denneAktivitet.name }
-        </H1B>
-        <div className="mb-2">
-          <p className="inline-block">
-            { denneAktivitet.minAge }-{ denneAktivitet.maxAge } år
-            &nbsp; · &nbsp;
-          </p>
-          <p className="inline-block">
-            { denneAktivitet.weekday }
-            &nbsp;
-          </p>
-          <p className="inline-block">
-            { denneAktivitet.time }
+          { loggedIn && (
+            <button className='
+              absolute bottom-8 right-8
+            '>
+              <BasicButton>( dynamisk tekst )</BasicButton>
+            </button>
+          )}
+
+        </div>
+        <div className="px-8 pt-6 pb-16">
+          <H1B>
+            { denneAktivitet.name }
+          </H1B>
+          <div className="mb-2">
+            <p className="inline-block">
+              { denneAktivitet.minAge }-{ denneAktivitet.maxAge } år
+              &nbsp; · &nbsp;
+            </p>
+            <p className="inline-block">
+              { denneAktivitet.weekday }
+              &nbsp;
+            </p>
+            <p className="inline-block">
+              { denneAktivitet.time }
+            </p>
+          </div>
+          <p>
+            { denneAktivitet.description }
           </p>
         </div>
-        <p>
-          { denneAktivitet.description }
-        </p>
-      </div>
+      </main>
     </>
   ) : ( <>
     { error

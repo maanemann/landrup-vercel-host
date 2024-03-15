@@ -10,6 +10,9 @@ const Aktiviteter = () => {
   const { aktiviteterData, error } = useApiContext();
 
   return ( <>
+
+    <Drawer />
+
     <main className="p-8">
       <H1A>Aktiviteter</H1A>
       <div className="
@@ -28,7 +31,6 @@ const Aktiviteter = () => {
 
       </div>
     </main>
-    <Drawer />
   </> );
 }
  
