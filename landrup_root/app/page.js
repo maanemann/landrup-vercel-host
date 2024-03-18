@@ -1,7 +1,6 @@
 
 import BasicButton from '@/components/BasicButton';
-import bg from '@/public/baggrund.png'
-import Image from 'next/image';
+import BgImage from '@/components/BgImage';
 import { roboto, racingSansOne } from '@/app/layout';
 import Link from 'next/link';
 
@@ -9,15 +8,7 @@ export default function Home() {
   return ( <>
     <main className='grid'>
       {/* Containeren til et `Image` med `fill` skal have position og overflow hidden : */}
-      <div className='
-        fixed overflow-hidden
-        w-full h-full
-        col-span-1 row-span-1
-      '>
-        <Image src={bg} alt="baggrund"
-        fill style={{ objectFit: 'cover' }}
-        placeholder='blur' priority />
-      </div>
+      <BgImage />
       <div className='
         col-span-1 row-span-1 fixed
         mt-[50vh]

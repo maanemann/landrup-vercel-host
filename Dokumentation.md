@@ -1,4 +1,10 @@
 
+## Info
+
+- Selve projektet (UI) findes her: `/landrup_root`.
+- Jeg har ikke lavet ændringer til `landrup-dans-api`, som derfor ikke er inkluderet.
+
+
 ## Tech-stack:
 
 - React (JavaScript framework)
@@ -55,6 +61,10 @@ Det nærmeste alternativ til Tailwind – foruden vanilla CSS – er måske Boot
 
 - Ugedag og tidspunkt for aktivitet er ikke i designet, men det står i opgavebeskrivelse, så jeg har tilføjet det inline med aldersgruppe, med en prik ("·") imellem. Havde der været en designer, ville jeg selvfølgelig konsultere vedkommende.
 
+- Da der ikke er en anvisning til, hvordan brugere navigerer til login-siden, har jeg gjort kalenderknappen i "drawer"-menuen til et link til login-siden, når man ikke er logget ind, og når man er logget ind, fører den selvfølgelig til kaldenderen som beskrevet i opgaven. Tilmeldingsknappen under en aktivitet kunne fungere på sammen måde, men da der står konkret i opgaven, at den skal være skjult, når man ikke er logget ind, må jeg rette mig efter det.
+
+- På søgesiden har jeg tilføjet teksten "Søg efter en aktivitet i søgefeltet ↑", når søgefeltet er tomt, så man ikke bare får en tom baggrund (= dårlig brugeroplevelse).
+
 
 ## Valgfri opgave
 
@@ -63,5 +73,13 @@ Det nærmeste alternativ til Tailwind – foruden vanilla CSS – er måske Boot
 
 ## Reflektion
 
-- Reflekter over og beskriv hvordan applikationen i sin nuværende form kan skaleres i fremtiden.
+- %% Reflekter over og beskriv hvordan applikationen i sin nuværende form kan skaleres i fremtiden. %%
+
+- Noget af det første, man skulle arbejde videre med var at gøre applikationen mere responsiv, selvom jeg allerede har sørget for det "grove" ved at bruge responsive enheder til de forekellige værdier.
+
+- Man kunne lave native apps til iOS og Android (og evt. andre systemer), f.eks. med React Native
+
+- Der mangler både en funktion til at oprette en bruger og til at logge ud..
+
+- Hvis applikationen skal have nogle krav til brugernavn og adgangskode, kunne man udvide valideringen til også at tjekke efter dette – f.eks. at der ikke bruges invalide tegn, at adgangskoden indeholder både tal og bogstaver, og at kriterierne ikke er for korte eller lange.
 
