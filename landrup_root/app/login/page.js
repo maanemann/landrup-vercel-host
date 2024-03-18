@@ -22,6 +22,7 @@ const Login = () => {
   const [responseMessage, setResponseMessage] = useState(null);
   const [brugernavnFejl, setBrugernavnFejl] = useState(null);
   const [adgangskodeFejl, setAdgangskodeFejl] = useState(null);
+  const [loading, setLoading] = useState(null);
 
   // ## submitEvent: validering
   const submitEvent = (e) => {
@@ -44,14 +45,17 @@ const Login = () => {
 
       // Hvis der hænger en fejlbesked fra en tidligere submit.. :
       setResponseMessage(null);
-
+      
       // `Return` stopper funktionen her, hvis betingelsen er opfyldt, så resten ikke eksekveres :
       return
     }
-
+    
     // Nulstiller potentielle gamle fejlbeskeder :
     setBrugernavnFejl(null);
     setAdgangskodeFejl(null);
+    setResponseMessage(null);
+    // Og viser en loading besked :
+    setLoading("loading...");
 
     // Jeg laver her et objekt til credentials :
     const credentials = {
@@ -86,6 +90,8 @@ const Login = () => {
     .then(data => {
       console.log("Returneret data fra serveren:", data);
 
+      setLoading(null);
+
       setResponseMessage(
         <p> Yes, du loggede ind! 😎 </p>
       );
@@ -106,6 +112,7 @@ const Login = () => {
         fejlbesked = <p> Ups, noget gik galt: {error.message} </p>;
       }
 
+      setLoading(null);
       setResponseMessage(fejlbesked);
     });
   }
@@ -155,12 +162,13 @@ const Login = () => {
 
         </form>
       </div>
-      { (brugernavnFejl || adgangskodeFejl || responseMessage) && 
+      { (brugernavnFejl || adgangskodeFejl || responseMessage || loading) && 
         <div className="
           fixed top-[100vh] -translate-y-full w-full
           text-center text-white text-xl leading-10
           bg-themeBg/95 px-7 py-10
         ">
+          { loading && <div>{loading}</div> }
           { brugernavnFejl && <div>{brugernavnFejl}</div> }
           { adgangskodeFejl && <div>{adgangskodeFejl}</div> }
           { responseMessage && <div>{responseMessage}</div> }
