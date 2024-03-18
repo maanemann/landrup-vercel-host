@@ -96,7 +96,9 @@ const Login = () => {
         <p> Yes, du loggede ind! 😎 </p>
       );
 
+      // Set loggedIn til true i context + gem i localStorage :
       setLoggedIn(true);
+      localStorage.setItem('loggedIn', JSON.stringify(true));
 
       // Navigerer brugeren videre med nextjs router :
       router.push("/kalender");

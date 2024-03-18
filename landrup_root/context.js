@@ -63,7 +63,10 @@ export function useApiContext() {
 const loginContext = createContext();
 
 export function LoginWrapper({ children }) {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(() => {
+    const returningUser =  localStorage.getItem('loggedIn');
+    return returningUser !== null ? JSON.parse(returningUser) : false;
+  });
 
   return(
     <loginContext.Provider value={{ loggedIn, setLoggedIn }}>
