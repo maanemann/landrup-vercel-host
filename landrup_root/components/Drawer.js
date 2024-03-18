@@ -19,9 +19,25 @@ const Icon = ({ link, children, title, classExt }) => {
 
 const Drawer = () => {
 
-  const { loggedIn } = useLoginContext();
+  const { loggedIn, setLoggedIn } = useLoginContext();
 
-  return (
+  return ( <>
+    { loggedIn &&
+      <button
+        onClick={() => {
+          setLoggedIn(false)
+          localStorage.setItem('loggedIn', JSON.stringify(false));
+        }}
+        className="
+          fixed top-9 right-8 z-10 px-4 leading-8
+          text-[1rem] tracking-wider
+          bg-themeBg rounded-full
+        "
+      >
+        Log ud
+      </button>
+    }
+
     <nav className="
       z-10 fixed bottom-0 bg-themeBright
     ">
@@ -57,7 +73,7 @@ const Drawer = () => {
         }
       </ul>
     </nav>
-   );
+  </> );
 }
  
 export default Drawer;
