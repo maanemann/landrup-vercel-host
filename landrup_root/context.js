@@ -28,8 +28,13 @@ export function ApiWrapper({ children }) {
         setAktiviteterData(data);
         
       } catch (error) {
-        // console.error('Error fetching aktiviteter:', error.message);
-        setError(error.message);
+        setError(
+          <div>
+            {/* &#40; er kode for "(", til en trist smiley som ikke tolkes semantisk : */}
+            Ups, der var en fejl :&#40;
+            <br /> Fejlbesked: {error.message}
+          </div>
+        );
       }
     };
 
@@ -59,10 +64,6 @@ const loginContext = createContext();
 
 export function LoginWrapper({ children }) {
   const [loggedIn, setLoggedIn] = useState(false);
-
-  // useEffect(() => {
-  //   // ..................
-  // }, []);
 
   return(
     <loginContext.Provider value={{ loggedIn, setLoggedIn }}>
