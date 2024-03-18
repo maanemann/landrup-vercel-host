@@ -38,13 +38,21 @@ const Aktivitetsdetaljer = ({ params }) => {
             "/>
           </div>
 
-          { loggedIn && (
-            <button className='
-              absolute bottom-8 right-8
-            '>
-              <BasicButton>( dynamisk tekst )</BasicButton>
-            </button>
-          )}
+          { loggedIn === true
+            ? (
+              <button className="
+                absolute bottom-8 right-8
+              ">
+                <BasicButton> Tilmeld </BasicButton>
+              </button>
+            ) : (
+              <Link href="/login" className="
+                absolute bottom-8 right-8
+              ">
+                <BasicButton> Log ind </BasicButton>
+              </Link>
+            )
+          }
 
         </div>
         <div className="px-8 pt-6 pb-16">

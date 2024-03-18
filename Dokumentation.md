@@ -63,9 +63,9 @@ Det nærmeste alternativ til Tailwind – foruden vanilla CSS – er måske Boot
 
 - Login gemmes i local storage (og selvfølgelig også i context, som tjekker local storage), så det er muligt at refreshe siden uden at blive logget ud
 
-- Da der ingen log-ud funktion var i beskrivelsen / layoutet, har jeg tilføjet en, som vises (når man er logget ind) øverst til højre (fixed) i alle routes, undtagen `velkommen`. Den sætter både context og local storage, ligesom når man logger ind.
+- Da der ikke er en anvisning til, hvordan brugere navigerer til login-siden, har jeg gjort kalenderknappen i drawer-menuen til et link til denne, når man ikke er logget ind, og når man er logget ind, fører den selvfølgelig til kaldenderen som beskrevet i opgaven. Det samme har jeg implementeret for "Tilmeld"-knappen, som nu er en log-ind-knap, når man ikke er logget ind.
 
-- Da der ikke er en anvisning til, hvordan brugere navigerer til login-siden, har jeg gjort kalenderknappen i "drawer"-menuen til et link til login-siden, når man ikke er logget ind, og når man er logget ind, fører den selvfølgelig til kaldenderen som beskrevet i opgaven. Tilmeldingsknappen under en aktivitet kunne fungere på sammen måde, men da der står konkret i opgaven, at den skal være skjult, når man ikke er logget ind, må jeg rette mig efter det.
+- Jeg har også tilføjet en log-ud-knap, som vises (når man er logget ind) øverst til højre (fixed) i alle routes, undtagen `velkommen`. Den sætter både context og local storage, ligesom når man logger ind.
 
 - På søgesiden har jeg tilføjet teksten "Søg efter en aktivitet i søgefeltet ↑", når søgefeltet er tomt, så man ikke bare får en tom baggrund (= dårlig brugeroplevelse).
 
