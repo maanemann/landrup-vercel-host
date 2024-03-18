@@ -19,10 +19,25 @@
     -webkit-text-stroke-width: 1.5px;
     -webkit-text-stroke-color: theme('colors.themeBg');
   }
+  
   .dansCss {
     color: theme('colors.fuchsia.500');
     -webkit-text-fill-color: theme('colors.fuchsia.500');
     -webkit-text-stroke-width: 1.5px;
     -webkit-text-stroke-color: theme('colors.themeBg');
   }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+
+  .fadeInCss {
+    animation: 1500ms ease-in-out fadeIn;
+  }
 }
+

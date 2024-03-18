@@ -1,4 +1,6 @@
 
+// 'use client'
+
 import BasicButton from '@/components/BasicButton';
 import BgImage from '@/components/BgImage';
 import { roboto, racingSansOne } from '@/app/layout';
@@ -35,8 +37,8 @@ export default function Home() {
           shadow-[.2rem_.2rem_.2rem_0_#00000050]
         ' />
       </div>
-      {/* Jeg ville have lavet et enkelt element med `as` prop i stedet for at neste under Link, men Next komponenter kan ikke sendes som prop : */}
       <Link href="/aktiviteter" className='
+        fadeInCss
         fixed bottom-14 left-1/2 -translate-x-1/2
       '>
         <BasicButton>Kom i gang</BasicButton>
