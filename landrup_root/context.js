@@ -67,9 +67,13 @@ export function LoginWrapper({ children }) {
     const returningUser =  localStorage.getItem('loggedIn');
     return returningUser !== null ? JSON.parse(returningUser) : false;
   });
+  const [userId, setUserId] = useState(null);
+  const [token, setToken] = useState(null);
+
+  // const [username, setUsername] = useState(null);
 
   return(
-    <loginContext.Provider value={{ loggedIn, setLoggedIn }}>
+    <loginContext.Provider value={{ loggedIn, setLoggedIn, userId, setUserId, token, setToken }}>
       { children }
     </loginContext.Provider>
   )
