@@ -64,9 +64,16 @@ const loginContext = createContext();
 
 export function LoginWrapper({ children }) {
   const [loggedIn, setLoggedIn] = useState(() => {
-    const returningUser =  localStorage.getItem('loggedIn');
-    return returningUser !== null ? JSON.parse(returningUser) : false;
+
+    // i) Hvis `window` ikke er defineret, kører koden på serveren, hvor der ikke er `localStorage`. Så fejl undgås, men det betyder måske også `localStorage` slet ikke læses. Derfor:
+    // TODO: prøv at flytte `localStorage` ud af context og brug `useEffect` til at opdatere `loggedIn` state, når `localStorage` opdateres(??) :
+
+    if (typeof window !== 'undefined') {
+      const returningUser =  localStorage.getItem('loggedIn');
+      return returningUser !== null ? JSON.parse(returningUser) : false;
+    }
   });
+
   const [userId, setUserId] = useState(null);
   const [token, setToken] = useState(null);
 
