@@ -3,6 +3,7 @@ import { BiHomeAlt } from "react-icons/bi";
 import { FiSearch, FiCalendar } from "react-icons/fi";
 import Link from "next/link";
 import { useLoginContext } from "@/context";
+import Cookies from "js-cookie";
 
 const Icon = ({ link, children, title, classExt }) => {
   return (
@@ -26,7 +27,8 @@ const Drawer = () => {
       <button
         onClick={() => {
           setLoggedIn(false)
-          localStorage.setItem('loggedIn', JSON.stringify(false));
+          // Cookies.remove('loggedIn');
+          // ~~ localStorage.setItem('loggedIn', JSON.stringify(false));
         }}
         className="
           fixed top-9 right-8 z-10 px-4 leading-8

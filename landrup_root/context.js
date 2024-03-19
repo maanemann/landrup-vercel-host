@@ -2,6 +2,7 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect } from "react";
+// import Cookies from "js-cookie";
 
 
 // // #region apiContext
@@ -64,14 +65,13 @@ const loginContext = createContext();
 
 export function LoginWrapper({ children }) {
   const [loggedIn, setLoggedIn] = useState(() => {
+    // return Cookies.get('loggedIn') ? true : false;
 
-    // i) Hvis `window` ikke er defineret, kører koden på serveren, hvor der ikke er `localStorage`. Så fejl undgås, men det betyder måske også `localStorage` slet ikke læses. Derfor:
-    // TODO: prøv at flytte `localStorage` ud af context og brug `useEffect` til at opdatere `loggedIn` state, når `localStorage` opdateres(??) :
-
-    if (typeof window !== 'undefined') {
-      const returningUser =  localStorage.getItem('loggedIn');
-      return returningUser !== null ? JSON.parse(returningUser) : false;
-    }
+    // ~~ if (typeof window !== 'undefined') {
+    // ~~   const returningUser =  localStorage.getItem('loggedIn');
+    // ~~   return returningUser !== null ? JSON.parse(returningUser) : false;
+    // ~~ }
+    false
   });
 
   const [userId, setUserId] = useState(null);

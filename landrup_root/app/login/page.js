@@ -7,6 +7,7 @@ import { H1C } from "@/components/Headings";
 import { useState } from "react";
 import { useLoginContext } from "@/context";
 import { useRouter } from "next/navigation";
+// import Cookies from "js-cookie";
 
 // Indhold:
 // # Login
@@ -98,7 +99,8 @@ const Login = () => {
 
       // Set loggedIn til true i context + gem i localStorage :
       setLoggedIn(true);
-      localStorage.setItem('loggedIn', JSON.stringify(true));
+      // Cookies.set('loggedIn', true);
+      // ~~ localStorage.setItem('loggedIn', JSON.stringify(true));
 
       // Navigerer brugeren videre med nextjs router :
       router.push("/kalender");
