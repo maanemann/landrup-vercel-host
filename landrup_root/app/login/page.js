@@ -99,6 +99,7 @@ const Login = () => {
 
       // Set loggedIn til true i context + gem i localStorage :
       setLoggedIn(true);
+      
       // Cookies.set('loggedIn', true);
       // ~~ localStorage.setItem('loggedIn', JSON.stringify(true));
 

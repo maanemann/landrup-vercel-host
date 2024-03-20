@@ -1,6 +1,6 @@
 
 import bg from '@/public/baggrund.png'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 const BgImage = () => {
   return (
@@ -9,9 +9,13 @@ const BgImage = () => {
       w-full h-full
       col-span-1 row-span-1
     '>
-      <Image src={bg} alt="baggrund"
-      fill style={{ objectFit: 'cover' }}
-      placeholder='blur' priority />
+      <img src="/baggrund.png"
+       alt="baggrund"
+        className='
+          object-cover
+          w-full h-full
+        '
+      />
     </div>
   );
 }

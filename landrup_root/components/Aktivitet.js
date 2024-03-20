@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 
 const Aktivitet = ({ assetUrl, name, minAge, maxAge, id }) => {
@@ -7,9 +7,10 @@ const Aktivitet = ({ assetUrl, name, minAge, maxAge, id }) => {
     {/* as={`/aktiviteter/${name}`}> */}
       <figure className="relative">
         <div className="w-full h-[344px] relative">
-          <Image src={ assetUrl }
-            alt={ name } fill className="
+          <img src={ assetUrl }
+            alt={ name } className="
               object-cover
+              w-full h-full
               rounded-tl-4xl rounded-tr-4xl rounded-bl-4xl
               bg-fuchsia-950
           "/>

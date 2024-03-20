@@ -5,7 +5,7 @@ import BasicButton from "@/components/BasicButton";
 import Drawer from "@/components/Drawer";
 import { H1B } from "@/components/Headings";
 import { useLoginContext, useApiContext } from "@/context";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -30,10 +30,10 @@ const Aktivitetsdetaljer = ({ params }) => {
       <main>
         <div className="relative">
           <div className="relative w-full h-[489px]">
-            <Image
+            <img
               src={denneAktivitet.asset.url} alt={ denneAktivitet.name }
-              fill priority className="
-                object-cover
+              priority className="
+                object-cover w-full h-full
                 bg-fuchsia-950
             "/>
           </div>
