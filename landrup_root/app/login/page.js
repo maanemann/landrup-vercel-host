@@ -4,7 +4,7 @@
 import BasicButton from "@/components/BasicButton";
 import BgImage from "@/components/BgImage";
 import { H1C } from "@/components/Headings";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLoginContext } from "@/context";
 import { useRouter } from "next/navigation";
 // import Cookies from "js-cookie";
@@ -12,18 +12,28 @@ import { useRouter } from "next/navigation";
 // Indhold:
 // # Login
 // ## submitEvent: validering
-// ## loginRequest: fetch request og respons
+// ## loginRequest: credentials check & brugerdata
 // ## InputField: komponent til inputfelterne
 
 // # Login
 const Login = () => {
-  const { setLoggedIn } = useLoginContext();
+  const {
+    setLoggedIn, setUserId, setToken,
+    setFirstname, setLastname,
+    setAge, setRole, setActivities,
+    firstname, lastname, age, role, activities,
+  } = useLoginContext();
   const router = useRouter();
 
   const [responseMessage, setResponseMessage] = useState(null);
   const [brugernavnFejl, setBrugernavnFejl] = useState(null);
   const [adgangskodeFejl, setAdgangskodeFejl] = useState(null);
   const [loading, setLoading] = useState(null);
+
+  useEffect(() => {
+    firstname &&
+    console.log(firstname, lastname, age, role, activities)
+  }, [firstname]);
 
   // ## submitEvent: validering
   const submitEvent = (e) => {
@@ -69,7 +79,10 @@ const Login = () => {
     loginRequest(credentials);
   }
 
-  // ## loginRequest: fetch request og respons
+
+
+
+  // ## loginRequest: credentials check & brugerdata
   const loginRequest = (credentials) => {
 
     fetch("http://localhost:4000/auth/token", {
@@ -84,24 +97,43 @@ const Login = () => {
       if (!response.ok) {
         throw new Error(response.status);
       }
-      // Response fra serveren, forhåbentlig med token. `.json()` fortæller at det skal læses som json og konverteres til et js objekt :
+      // Response fra serveren, `.json()` = læs som json, konverteres til js objekt :
       return response.json();
     })
 
     .then(data => {
-      console.log("Returneret data fra serveren:", data);
+      setToken(data.token);
+
+      // Fetch #2 – brugerinfo :
+      return fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/${data.userId}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${data.token}`
+        }
+      });
+    })
+
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(response.status);
+      }
+      return response.json();
+    })
+
+    .then(userInfo => {
+      console.log("Hej",userInfo.firstname,"– her er din data:",userInfo);
 
       setLoading(null);
+      setLoggedIn(true);                  setUserId(userInfo.id);
+      setFirstname(userInfo.firstname);   setLastname(userInfo.lastname);
+      setAge(userInfo.age);               setRole(userInfo.role);
+      setActivities(userInfo.activities);
+      // Cookies.set('loggedIn', true);
 
       setResponseMessage(
         <p> Yes, du loggede ind! 😎 </p>
-      );
-
-      // Set loggedIn til true i context + gem i localStorage :
-      setLoggedIn(true);
-      
-      // Cookies.set('loggedIn', true);
-      // ~~ localStorage.setItem('loggedIn', JSON.stringify(true));
+        );
 
       // Navigerer brugeren videre med nextjs router :
       router.push("/kalender");
@@ -121,6 +153,9 @@ const Login = () => {
       setResponseMessage(fejlbesked);
     });
   }
+
+
+
 
   // ## InputField: komponent til inputfelterne
   const InputField = ({ name, placeholder }) => {

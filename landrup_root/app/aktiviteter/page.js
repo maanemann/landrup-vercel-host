@@ -7,7 +7,7 @@ import { useApiContext } from "@/context";
 import AktiviteterComp from "@/components/AktiviteterComp";
 
 const Aktiviteter = () => {
-  const { aktiviteterData, error } = useApiContext();
+  const { aktiviteterData, apiError } = useApiContext();
 
   return ( <>
 
@@ -16,7 +16,10 @@ const Aktiviteter = () => {
     <main className="p-8">
       <H1A>Aktiviteter</H1A>
 
-      { error && <p className="text-red-500">{error}</p> }
+      { apiError && <div className="text-red-500">
+        <p>{ apiError.forklaring }</p>
+        <p>{ apiError.fejlbesked }</p>
+      </div>}
 
       <AktiviteterComp filtreredeAktiviteter={aktiviteterData} />
     </main>

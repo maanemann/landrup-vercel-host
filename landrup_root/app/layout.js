@@ -22,6 +22,7 @@ export { ubuntu, roboto, racingSansOne };
 export const metadata = {
   title: "Landrup Dans",
   description: "Kom og dans med os!",
+  favicon: "/favicon.ico",
 };
 
 export default function RootLayout({ children }) {

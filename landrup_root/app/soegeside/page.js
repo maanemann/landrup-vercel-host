@@ -10,7 +10,7 @@ import AktiviteterComp from "@/components/AktiviteterComp";
 
 const Soegeside = () => {
   const [ searchTerm, setSearchTerm ] = useState("");
-  const { aktiviteterData, error } = useApiContext();
+  const { aktiviteterData, apiError } = useApiContext();
 
   const searchResults = searchTerm !== ""
     ? aktiviteterData.filter((aktivitet) => {
@@ -30,7 +30,10 @@ const Soegeside = () => {
 
       <H1A>Søg</H1A>
 
-      { error && <p className="text-red-500">{error}</p> }
+      { apiError && <div className="text-red-500">
+        <p>{ apiError.forklaring }</p>
+        <p>{ apiError.fejlbesked }</p>
+      </div>}
 
       {/*når value ændres, reflekteres det i searchTerm (state ↑) : */}
       <div className="relative">
