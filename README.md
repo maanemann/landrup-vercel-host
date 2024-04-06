@@ -5,7 +5,7 @@ For our final examn in front-end development we had a week to build this fitness
 ## Instructions for viewers
 - Please use the `integratedApi` branch instead of `main` (as `main` is set differently(*)).
 - The project UI is found here: `/landrup_root`. Note that this is not a design assignment, the job was to closely imitate the supplied Figma file.
-- The API that was handed out, containing activity data, user/trainer data etc, is located at `/landrup-root/landrup-dans-api`.
+- The API that was handed out, containing activity data, user/trainer data etc, is located at `/landrup-dans-api`.
 - To launch the project, run `npm run dev` in the UI folder (set to port 3000) and `npm start` in the API folder (set to port 4000). Of course first you have to run `npm install` for both directories.
 - Note that the UI is optimized for a 411x823 screen res, matching the supplied Figma file, but given the dynamic CSS values I've used, it works fairly well in other formats as well.
 
