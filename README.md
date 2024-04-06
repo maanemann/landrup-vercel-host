@@ -1,6 +1,6 @@
 
-# Examn project, Hans August
-For our final examn in front-end development we had a week to build this fitness dance app. I was granted the grade of 12, which is as good as it gets (just bragging).
+# Exam project, Hans August
+For our final exam in front-end development we had a week to build this fitness dance app. I was granted the grade of 12, which is as good as it gets (just bragging).
 
 ## Instructions for viewers
 - Please use the `integratedApi` branch instead of `main` (as `main` is set differently(*)).
